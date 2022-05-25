@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
+import { untilDestroyed } from '@ngneat/until-destroy';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-shell',
@@ -6,10 +10,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shell.component.scss']
 })
 export class ShellComponent implements OnInit {
-
-  constructor() { }
+  @ViewChild('sidenav', { static: false }) sidenav!: MatSidenav;
+  constructor(private breakpoint: BreakpointObserver) { }
 
   ngOnInit(): void {
+    // Automatically close side menu on screens > small breakpoint
+    this.breakpoint
+      .observe([Breakpoints.Small, Breakpoints.XSmall])
+      .pipe(
+        filter(({ matches }) => !matches),
+        untilDestroyed(this)
+      )
+      .subscribe(() => this.sidenav.close());
   }
 
 }
