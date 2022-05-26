@@ -1,7 +1,4 @@
-import { Component, Input } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
@@ -12,7 +9,7 @@ import { AuthenticationService, CredentialsService } from 'src/app/auth';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   @Input() sidenav!: MatSidenav;
 
   constructor(

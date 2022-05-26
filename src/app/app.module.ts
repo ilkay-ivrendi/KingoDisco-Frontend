@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './@shared';
 import { ShellModule } from './shell/shell.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -18,12 +19,13 @@ import { ShellModule } from './shell/shell.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule,
     HttpClientModule,
+    RouterModule,
+    AuthModule,
+    FormsModule,
     MaterialModule,
     SharedModule,
     ShellModule,
-    AuthModule,
     AppRoutingModule,
   ],
   providers: [],
