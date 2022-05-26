@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { ShellService } from '@shell/shell.service';
+
 import { LoginComponent } from './auth/login/login.component';
-import { ShellService } from './shell/shell.service';
 
 const routes: Routes = [
   ShellService.childRoutes([{ path: 'about', loadChildren: () => import('./about/about.module').then((m) => m.AboutModule) }]),
