@@ -8,6 +8,13 @@ export interface LoginContext {
   remember?: boolean;
 }
 
+export interface SignupContext {
+  username: string;
+  email: string;
+  password: string;
+  password_match: string;
+}
+
 /**
  * Provides a base for authentication workflow.
  * The login/logout methods should be replaced with proper implementation.
@@ -42,6 +49,15 @@ export class AuthenticationService {
     // Customize credentials invalidation here
     this.credentialsService.setCredentials();
     return of(true);
+  }
+
+  signup(context: SignupContext): Observable<any> {
+    const data = {
+      username: context.username,
+      token: '123456',
+    };
+    this.credentialsService.setCredentials(data);
+    return of(data);
   }
 
 }

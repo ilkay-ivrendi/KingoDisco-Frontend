@@ -1,0 +1,28 @@
+@import "src/theme/theme-variables";
+
+:host {
+    display: flex;
+    flex: 1;
+    background-color: darkgrey;
+}
+
+.inline-loader {
+    display: inline-block;
+}
+
+.version {
+    margin: 0;
+}
+
+.signup-container,
+.mat-form-field {
+    width: 100%;
+}
+
+.signup-fields> :not(:last-child) {
+    margin-bottom: 8px;
+}
+
+.signup-error {
+    color: mat-color($app-warn);
+}

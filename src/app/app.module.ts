@@ -8,9 +8,9 @@ import { MaterialModule } from './material.module';
 import { AuthModule } from './auth/auth.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { SharedModule } from './@shared';
-import { ShellModule } from './shell/shell.module';
+import { SharedModule } from '@shared';
 import { RouterModule } from '@angular/router';
+import { ShellModule } from '@shell';
 
 @NgModule({
   declarations: [
@@ -19,13 +19,13 @@ import { RouterModule } from '@angular/router';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    HttpClientModule,
     RouterModule,
     AuthModule,
     FormsModule,
     MaterialModule,
     SharedModule,
     ShellModule,
+    HttpClientModule,
     AppRoutingModule,
   ],
   providers: [],
