@@ -11,7 +11,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from '@shared';
 import { RouterModule } from '@angular/router';
 import { ShellModule } from '@shell';
-import { HomeComponent } from './home/home.component';
 import { HomeModule } from './home/home.module';
 
 @NgModule({
