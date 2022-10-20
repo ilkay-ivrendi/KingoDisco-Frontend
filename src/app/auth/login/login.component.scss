@@ -3,7 +3,11 @@
 :host {
     display: flex;
     flex: 1;
-    background-color: #f5f5f5;
+    background-color: mat-color($app-yellow);
+}
+
+.login-box{ 
+    font-size: large;
 }
 
 .inline-loader {

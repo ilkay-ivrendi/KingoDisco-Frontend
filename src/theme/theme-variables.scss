@@ -15,13 +15,18 @@
 // hue.
 $app-primary: mat-palette($mat-purple);
 // stylelint-disable-next-line value-keyword-case
-$app-accent: mat-palette($mat-green, A200, A100, A400);
+$app-accent: mat-palette($mat-yellow, A200, A100, A400);
+
+$app-yellow: mat-palette($mat-yellow, A400);
 
 // The warn palette is optional (defaults to red).
 $app-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+$app-theme-light: mat-light-theme($app-primary, $app-accent, $app-warn);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$app-theme: mat-dark-theme($app-primary, $app-accent, $app-warn);
 
 // Material design icons font path
 $material-design-icons-font-directory-path: "~material-design-icons-iconfont/dist/fonts/";

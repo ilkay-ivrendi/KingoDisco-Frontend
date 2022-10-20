@@ -5,21 +5,26 @@
             <h4 class="version">v{{ version }}</h4>
         </div>
     </div>
-    <div class="login-container" fxLayout="row" fxLayoutAlign="center">
-        <mat-card fxFlex="90%" fxFlex.sm="66%" fxFlex.md="50%" fxFlex.gt-md="33%" class="login-box">
+    <div class="login-container" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="20">
+        
+        <img fxFlex="30%" fxFlexOrder="1" class="logo" src="assets/images/headset.png" alt="kingodisco logo"/>
+
+        <mat-card fxFlex="90%" fxFlex.sm="66%" fxFlex.md="50%" fxFlex.gt-md="33%" class="login-box" fxFlexAlign.gt-lg="auto">
             <form (ngSubmit)="login()" [formGroup]="loginForm" novalidate>
                 <div class="login-error" [hidden]="!error || isLoading" translate>Username or password incorrect.</div>
                 <br />
                 <div class="login-fields" fxLayout="column">
-                    <mat-form-field [hideRequiredMarker]="true">
+                    <mat-form-field [hideRequiredMarker]="true" color="accent" appearance="outline">
+                        <mat-label>Username</mat-label>
                         <input type="text" matInput formControlName="username" autocomplete="username"
-                            [placeholder]="'Username'" required />
+                            placeholder="Username" required />
                         <mat-error
                             *ngIf="loginForm.controls['username'].invalid && loginForm.controls['username'].touched">
                             <span translate>Username is required</span>
                         </mat-error>
                     </mat-form-field>
-                    <mat-form-field [hideRequiredMarker]="true">
+                    <mat-form-field [hideRequiredMarker]="true" color="accent" appearance="outline">
+                        <mat-label>Password</mat-label>
                         <input type="password" matInput formControlName="password" autocomplete="current-password"
                             [placeholder]="'Password'" required />
                         <mat-error
@@ -36,7 +41,6 @@
                     <button mat-raised-button color="primary" routerLink="/signup">
                         <span translate>Sign Up!</span>
                     </button>
-                    <app-button></app-button>
                 </div>
             </form>
         </mat-card>
